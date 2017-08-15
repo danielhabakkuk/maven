@@ -10,6 +10,7 @@ stage ('build'){
 	sh "${MVNHOME}/bin/mvn clean install"
 }
 
+	
 stage ('Test Cases Execution'){
 	sh "${MVNHOME}/bin/mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test"
 }
